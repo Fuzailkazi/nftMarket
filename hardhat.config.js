@@ -3,10 +3,12 @@ require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.18",
+  defaultNetwork: "sepolia",
   networks: {
     sepolia: {
-      url: process.env.INFURA_URL,
-      accounts: [process.env.WALLET_PRIVATE_KEY],
+      url: process.env.ALCHEMY_KEY,
+      accounts: [`0x${process.env.WALLET_PRIVATE_KEY}`],
+      chainId: 11155111,
     },
   },
 };
